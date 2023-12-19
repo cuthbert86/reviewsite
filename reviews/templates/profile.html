@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Profile</h1>
+  <table class="table table-striped">
+    <thead>
+      <th></th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Username</td>
+        <td>{{ profile.user.username }}</td>
+      </tr>>
+      <tr>
+        <td>Password</td>
+        <td><a href={% url 'change_password' %} class="btn btn-secondary">Change Password</a></td>
+      </tr>
+      <tr>
+        <td>DOB</td>
+        <td>{{ profile.dob }}</td>
+      </tr>>
+      <tr>
+        <td>Address</td>
+        <td>{{ profile.address }}</td>
+      </tr>>
+      <tr>
+        <td>City</td>
+        <td>{{ profile.city }}</td>
+      </tr>>
+      <tr>
+        <td>Country</td>
+        <td>{{ profile.country }}</td>
+      </tr>
+      <tr>
+        <td>Photo</td>
+        <td>
+          {% if profile.photo %}
+            <img src="{{ profile.photo.url }}">
+          {% else %}
+            No photo :'(
+          {% endif %}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <a href="{% url 'update_user_profile' %}" class="btn btn-secondary">Update</a>
+{% endblock content %}

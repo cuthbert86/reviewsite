@@ -1,0 +1,5 @@
+[flake8]
+
+# Ignore anything in our venv
+exclude =
+    */venv/*

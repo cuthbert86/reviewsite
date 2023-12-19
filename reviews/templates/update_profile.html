@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content-section">
+    <h4>Update profile</h4>
+    <form enctype="multipart/form-data" action="" method="post">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            {% crispy form %}
+            <button class="btn">Submit</button>
+        </fieldset>
+    </form>
+</div>
+{% endblock content %}

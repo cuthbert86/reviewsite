@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content-section">
+    <h1>Registration</h1>
+    <form method="post" action="{% url 'register_new_user' %}">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            {% crispy user_form %}
+            {% crispy profile_form %}
+            <button type="submit">Create</button>
+        </fieldset>  
+    </form>
+</div>
+{% endblock content %}
