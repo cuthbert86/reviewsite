@@ -13,9 +13,6 @@ from .models import Product, Profile
 
 
 def home_page(request):
-    if not request.user.is_authenticated:
-        return redirect('login')
-
     return render(request, 'welcome.html')
 
 
